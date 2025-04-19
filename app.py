@@ -1,4 +1,6 @@
 import streamlit as st
+st.set_page_config(page_title="Dashboard Cảm Biến", layout="wide")  # ⚠️ PHẢI nằm ở đây!
+
 import pandas as pd
 import requests
 from streamlit_autorefresh import st_autorefresh
@@ -7,7 +9,6 @@ st_autorefresh(interval=5000, limit=None, key="refresh")
 
 API_URL = st.secrets["API_URL"]
 
-st.set_page_config(page_title="Dashboard Cảm Biến", layout="wide")
 st.title("📊 Sensor Dashboard (Lambda + DynamoDB)")
 
 device_id = st.text_input("Thiết bị:", "testing")
